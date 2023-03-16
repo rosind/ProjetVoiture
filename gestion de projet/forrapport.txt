@@ -1,0 +1,17 @@
+Voiture autonome
+Description du projet
+Le but ultime de ce projet était d'appliquer la méthode agile scrum. Le projet consiste à développer (en Python 3) 
+un module mobile afin de réaliser une course de formule 1 sur un circuit défini par les enseignants. 
+• Le module pourra effectuer au moins un tour complet du circuit (celui-ci pourra être chronométré 
+afin de définir la position sur la grille de départ de la course). • Il doit pouvoir s'arrêter après la 
+ligne d'arrivée. • Il sera possible de définir le nombre de tours à effectuer pour une course (le nombre de 
+tours sera tiré au sort par les professeurs) • Il doit être capable d'éviter tout obstacle (ex : murs, autres 
+véhicules, etc.) • Il faudra veiller à optimiser au maximum les trajectoires du module afin de bien évidemment, gagner la course.
+
+Matériel fourni
+Le module sera équipé de différents capteurs et moteurs tels que : • Des capteurs à ultrasons HCSR04 • Un capteur infrarouge 
+• Deux moteurs à courant continu • 3 servomoteurs dont deux en option Vous disposerez des équipements suivants : 
+• Un Raspberry Pi 3 Model B ( il vous faudra établir une connexion SSH / TightVNCserver avec celui-ci) 
+• Une alimentation 2.4A AC/DC • Quatre batteries type 18650 de 5800mAh chacune • Un chargeur pour batterie 18650. 
+• Une carte µSD (vierge – vous devrez donc installer l'OS Raspbian) • Un module SunFounder (kit de voiture vidéo intelligent) 
+déjà monté. • Vous pouvez, si nécessaire, bénéficier d'équipements supplémentaires.
