@@ -6,6 +6,5 @@ from capteurs import *
 ultrason = CapteurUltrason(37,35)
 print("Attente du capteur...")
 time.sleep(2)
-distance = ultrason.distance()
-print("Distance ", distance, " cm" )
+print("Distance ", ultrason.distance(), " cm" )
 ultrason.cleanup()
