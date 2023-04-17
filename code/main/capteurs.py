@@ -1,3 +1,5 @@
+import time
+
 import RPi.GPIO as GPIO
 class CapteurInfrarouge:
     """Capteur TCRT5000"""
@@ -8,6 +10,8 @@ class CapteurInfrarouge:
     def detect(self):
         while True:
             if GPIO.input(self.pin):
-                print("Capteur ok !")
+                print("Je détecte !")
+                time.sleep(1)
             else:
-                print("Capteur pas ok !")
+                print("Je ne détecte pas !")
+                time.sleep(1)
