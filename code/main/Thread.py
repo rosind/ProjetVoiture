@@ -14,8 +14,6 @@ class CapteurUltrasonThread(threading.Thread):
     def stop(self):
         self.running = False
         #self.capteur.clean()
-    def get_distance(self):
-        return self.distance
 
 class CapteurInfrarougeThread(threading.Thread):
     def __init__(self, pin):
