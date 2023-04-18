@@ -22,14 +22,14 @@ class CapteurInfrarougeThread(threading.Thread):
     def __init__(self, capteur):
         threading.Thread.__init__(self)
         GPIO.setmode(GPIO.BCM)
-        GPIO.setup(pin, GPIO.IN)
+        GPIO.setup(capteur, GPIO.IN)
         self.capteur = capteur
         self.detectLigne = False
         self.running = True
         self.lock = threading.Lock()
     def run(self):
         while self.running:
-            if GPIO.input(self.pin):
+            if GPIO.input(self.capteur):
                 with self.lock:
                     self.detectLigne = True
                 time.sleep(0.2)
