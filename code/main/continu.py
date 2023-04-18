@@ -1,10 +1,7 @@
 from motorcc import *
-import board
-import busio
 import Adafruit_PCA9685 as adafruit_pca9685
 
-i2c = busio.I2C(board.SCL, board.SDA)
-pca = adafruit_pca9685.PCA9685(i2c)
+pca = adafruit_pca9685.PCA9685()
 pca.frequency = 50
 pca1 = pca.channels[5]
 #pca2 = adafruit_pca9685.channels[4]
