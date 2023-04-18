@@ -15,27 +15,34 @@ class CapteurInfrarouge:
                 print("Je ne détecte pas la ligne noir !")
                 time.sleep(0.2)
 class CapteurUltrason():
+    """Capteur HC-SR04 --> trig=26 echo=19 """
     def __init__(self, trig, echo):
-        GPIO.setmode(GPIO.BCM) #mode de numérotation des pins
-        GPIO.setup(trig, GPIO.OUT) #sortie Trig branchée au GPIO 37
-        GPIO.setup(echo, GPIO.IN) #entrée Echo branchée au GPIO 35
-
-        GPIO.output(trig, False)
-        GPIO.output(trig, True)
+        self.trig = trig
+        self.echo = echo
+        GPIO.setmode = (GPIO.BCM)
+        GPIO.setup(self.trig, GPIO.OUT)
+        GPIO.setup(self.echo, GPIO.IN)
+    def distance(self):
+        GPIO.output(self.trig, True)
         time.sleep(0.00001)
-        GPIO.output(trig, False)
+        GPIO.output(self.trig, False)
 
-        while GPIO.input(echo)==0: ## Emission de l'ultrason
-            debutImpulsion = time.time()
-        
-        while GPIO.input(echo)==1: ## Retour de l'Echo
-            finImpulsion = time.time()
+        pulseStart = time.time()
+        while GPIO.input(self.echo)==0:
+            pulse_start = time.time()
 
-        distance = round((finImpulsion - debutImpulsion) * 340 * 100 / 2, 1) ## Vitesse du son = 340 m/s
+        pulseEnd = time.time()
+        while GPIO.input(self.echo)==1:
+            pulse_end = time.time()
 
-        print ("La distance est de : ",distance," cm")
+        pulseTotal= pulseEnd-pulseStart
+        distance = pulseTotal*17150 #vitesse du son/2
+        distance = round(distance,2)
 
-        #GPIO.cleanup()
+        return distance
+
+    def clean(self):
+        GPIO.cleanup()
 
 class CapteurRGBDetector:
     """Capteur TCS3472"""
