@@ -21,8 +21,6 @@ class CapteurInfrarougeThread(threading.Thread):
     """Capteur TCRT5000 --> Pin 20"""
     def __init__(self, pin):
         threading.Thread.__init__(self)
-        GPIO.setmode(GPIO.BCM)
-        GPIO.setup(pin, GPIO.IN)
         self.pin = pin
         self.detectLigne = False
         self.running = True
@@ -43,5 +41,5 @@ class CapteurInfrarougeThread(threading.Thread):
         self.running = False
 
     def detect(self):
-        with self.lock: #Permet de bloquer la variable pour que les autres threads ne la modifie pas
+        with self.lock:
             return self.detectLigne

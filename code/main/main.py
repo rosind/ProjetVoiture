@@ -25,7 +25,10 @@ for i in range(10):
     print(f"Le capteur Avant: {th3.get_distance()}")
     print(f"Le capteur Droit: {th2.get_distance()}")
     print(f"Le capteur Gauche: {th1.get_distance()}")
-    print(f"Le capteur infrarouge {th4.detect()}")
+    if (th4.detect()):
+        print("Je détecte la ligne !")
+    else:
+        print("Je ne détecte pas la ligne !")
     print("----------------------")
 
 th1.stop()
