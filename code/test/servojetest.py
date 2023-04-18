@@ -2,7 +2,7 @@
 import PCA9685 as servo
 import time                  # Import necessary modules
 
-MinPulse = 50
+MinPulse = 150
 MaxPulse = 450
 
 def setup():
@@ -22,10 +22,14 @@ def leftServo():
         pwm.write(0, 0, value)
         time.sleep(0.1)
 
+def position_init():
+    pwm.write(0, 0, 250)    
 
-        pwm.write(0, 0, 350)
+
+        
 
 if __name__ == '__main__':
     setup()
     rightServo()
     leftServo()
+    position_init()
