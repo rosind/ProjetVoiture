@@ -27,12 +27,12 @@ class CapteurInfrarougeThread(threading.Thread):
     def run(self):
         while (self.running):
             if self.capteur.detect():
-                print("detect ok")
+                #print("detect ok")
                 self.etat = False
             else:
-                print("detect ko")
+                #print("detect ko")
                 self.etat = True
-        #return self.etat
+
 
             time.sleep(0.1)
 
