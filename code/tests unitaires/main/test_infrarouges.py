@@ -2,8 +2,8 @@ import unittest
 from unittest.mock import patch
 from guiguipastouchecapteurs import CapteurInfrarouge
 
-class TestCapteurInfrarouge(unittest.TestCase):
-    def setUp(self):
+class TestCapteurInfrarouge(unittest.TestCase): #permet de tester des cas
+    def setUp(self): 
         self.capteur = CapteurInfrarouge(20)
 
     @patch('capteur_infrarouge.GPIO')
