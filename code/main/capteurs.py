@@ -9,11 +9,11 @@ class CapteurInfrarouge:
     def detect(self):
         detect = False
         if GPIO.input(self.pin):
-            print("Je détecte la ligne noir!")
+            #print("Je détecte la ligne noir!")
             detectLigne = True
             time.sleep(0.2)
         else:
-            print("Je ne détecte pas la ligne noir !")
+            #print("Je ne détecte pas la ligne noir !")
             detectLigne = False
             time.sleep(0.2)
 
