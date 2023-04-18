@@ -23,9 +23,10 @@ def leftServo():
         time.sleep(0.1)
 
 def position_init():
-    pwm.write(0, 0, 250)    
+    pwm.write(0, 0, 300)    
 
-
+def stop():
+    exit
         
 
 if __name__ == '__main__':
@@ -33,3 +34,5 @@ if __name__ == '__main__':
     rightServo()
     leftServo()
     position_init()
+    stop()
+
