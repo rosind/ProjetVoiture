@@ -6,15 +6,42 @@ class CapteurUltrasonThread(threading.Thread):
         self.capteur = capteur
         self.distance = None
         self.running = False
-
     def run(self):
         self.running = True
         while self.running:
             self.distance = self.capteur.distance()
             time.sleep(0.1)
-
     def stop(self):
         self.running = False
         #self.capteur.clean()
     def get_distance(self):
         return self.distance
+
+class CapteurInfrarougeThread(threading.Thread):
+    """Capteur TCRT5000 --> Pin 20"""
+    def __init__(self, pin):
+        threading.Thread.__init__(self)
+        GPIO.setmode(GPIO.BCM)
+        GPIO.setup(pin, GPIO.IN)
+        self.pin = pin
+        self.detectLigne = False
+        self.running = True
+        self.lock = threading.Lock()
+
+    def run(self):
+        while self.running:
+            if GPIO.input(self.pin):
+                with self.lock:
+                    self.detectLigne = True
+                time.sleep(0.2)
+            else:
+                with self.lock:
+                    self.detectLigne = False
+                time.sleep(0.2)
+
+    def stop(self):
+        self.running = False
+
+    def detect(self):
+        with self.lock: #Permet de bloquer la variable pour que les autres threads ne la modifie pas
+            return self.detectLigne
