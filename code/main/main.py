@@ -19,14 +19,16 @@ th3.start()
 
 time.sleep(2)
 
-print(f"Le capteur Avant: {th3.get_distance()}")
-print(f"Le capteur Droit: {th2.get_distance()}")
-print(f"Le capteur Gauche: {th1.get_distance()}")
+for i in range(10):
+    print(f"Le capteur Avant: {th3.get_distance()}")
+    print(f"Le capteur Droit: {th2.get_distance()}")
+    print(f"Le capteur Gauche: {th1.get_distance()}")
+    print("----------------------")
 
-time.sleep(10)
-th1.stop()
-th2.stop()
-th3.stop()
+#time.sleep(10)
+#th1.stop()
+#th2.stop()
+#th3.stop()
 
 
 
