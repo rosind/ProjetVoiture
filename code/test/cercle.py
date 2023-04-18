@@ -4,8 +4,8 @@ from moteurjetest import *
 
 class cercle:
     def __init__(self,minimum,maximum):
-        self.min = minimum
-        self.max = maximum
+        self.minimum = minimum
+        self.maximum = maximum
         GPIO.setmode(GPIO.BOARD)
 
     def setup(self):
@@ -21,17 +21,18 @@ class cercle:
                     pwm.write(0, 0, value)
                     time.sleep(0.05)
 
-                pwm.write(0, 0, 350)
+                pwm.write(0, 0, 700)
         except KeyboardInterrupt:
             GPIO.cleanup()
 
-sens = cercle(100,400)
+sens = cercle(100,700)
 motor_pins = [11, 12, 13, 15] 
 pwm_pins = [4, 5] 
 forward_configs = [True, True] 
 voiture = Car(motor_pins, pwm_pins, forward_configs)
+voiture.set_speed(60)
 
-if __name__ == '__main__':
+if True:
     voiture.move_forward()
     sens.setup()
     sens.turn()
