@@ -11,23 +11,30 @@ class CapteurUltrason():
         self.trig = trig
         self.echo = echo
 
-        self.pulse_start = 0
-        self.pulse_end = 0
-        self.pulse_duree = 0
+        
+
+    def setup(self):
+        GPIO.setup(self.TRIG,GPIO.OUT)
+        GPIO.setup(self.ECHO,GPIO.IN)
 
     def distance(self):
+
+        pulse_start = 0
+        pulse_end = 0
+        pulse_duree = 0
+
         self.setup()
-        GPIO.output(self.trig, False)
+        GPIO.output(self.trig, GPIO.LOW)
         time.sleep(0.0001)
-        GPIO.output(self.trig, True)
+        GPIO.output(self.trig, GPIO.HIGH)
         time.sleep(0.00001)
-        GPIO.output(self.trig, False)
+        GPIO.output(self.trig, GPIO.LOW)
 
         while GPIO.input(self.echo)==0:
-            self.pulse_start = time.time()
+            pulse_start = time.time()
         
         while GPIO.input(self.echo_pin)==1:
-            self.pulse_end = time.time()
+            pulse_end = time.time()
 
         self.pulse_duree = self.pulse_end - self.pulse_start
 
