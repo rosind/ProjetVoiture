@@ -3,12 +3,13 @@ import time as sleep
 import PCA9685 as p
 
 class motorcc : 
-    pwm = p.PWM()
+    global pwm = p.PWM()
     pwm.frequency = 60
-    def __init__(self,A,B):
+    def __init__(self,A,B,speed=0):
         GPIO.setmode(GPIO.BOARD)
         self.A = A
         self.B = B
+        self.speed = speed
 
     def advance(self) : 
         # On configure toutes les pins
@@ -29,7 +30,7 @@ class motorcc :
             GPIO.output(B, GPIO.HIGH)
 
     def setSpeed(self,speed):
-
+        global pwm
         self.speed = speed #percent représente le pourcentage de vitesse
         EN_M0 = 4  
         EN_M1 = 5 
