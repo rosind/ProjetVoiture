@@ -2,20 +2,20 @@ from capteurs import *
 from Thread import *
 import threading
 
-#capt1 = CapteurInfrarouge(20)
-#capt1.detect()
-
 ultrasonGauche = CapteurUltrason(11,9)
 ultrasonDroite = CapteurUltrason(26,19)
 ultrasonAvant = CapteurUltrason(6,5)
+capt1 = CapteurInfrarouge(20)
 
 th1 = CapteurUltrasonThread(ultrasonGauche)
 th2 = CapteurUltrasonThread(ultrasonDroite)
 th3 = CapteurUltrasonThread(ultrasonAvant)
+th4 = CapteurInfrarougeThread(capt1)
 
 th1.start()
 th2.start()
 th3.start()
+th4.start()
 
 time.sleep(2)
 
@@ -25,6 +25,7 @@ for i in range(10):
     print(f"Le capteur Avant: {th3.get_distance()}")
     print(f"Le capteur Droit: {th2.get_distance()}")
     print(f"Le capteur Gauche: {th1.get_distance()}")
+    print(f"Le capteur infrarouge {th4.detect()}")
     print("----------------------")
 
 th1.stop()
