@@ -8,17 +8,16 @@ class CapteurInfrarouge:
         self.pin = pin
     def detect(self):
         detect = False
-        while True:
-            if GPIO.input(self.pin):
-                #print("Je détecte la ligne noir!")
-                detectLigne = True
-                time.sleep(0.2)
-            else:
-                #print("Je ne détecte pas la ligne noir !")
-                detectLigne = False
-                time.sleep(0.2)
+        if GPIO.input(self.pin):
+            #print("Je détecte la ligne noir!")
+            detectLigne = True
+            time.sleep(0.2)
+        else:
+            #print("Je ne détecte pas la ligne noir !")
+            detectLigne = False
+            time.sleep(0.2)
 
-            return detectLigne
+        return detectLigne
 class CapteurUltrason:
     """Capteur HC-SR04 --> trig=26 echo=19 (capteur droit) // trig=11 echo=9 (capteur gauche) // trig=6 echo=5 (avant)"""
     def __init__(self, trig, echo):
