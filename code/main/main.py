@@ -10,7 +10,7 @@ capt1 = CapteurInfrarouge(20)
 th1 = CapteurUltrasonThread(ultrasonGauche)
 th2 = CapteurUltrasonThread(ultrasonDroite)
 th3 = CapteurUltrasonThread(ultrasonAvant)
-th4 = CapteurInfrarougeThread(capt1)
+th4 = CapteurInfrarougeThread(capt1.pin)
 
 th1.start()
 th2.start()
