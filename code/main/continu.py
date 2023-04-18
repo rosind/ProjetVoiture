@@ -12,8 +12,8 @@ motor1 = motorcc(pca1,17,18)
 #motor2 = motorcc(pca2,27,22)
 try:
     while True:
-        motor2.advance
-        #motor1.advance
+        #motor2.advance
+        motor1.advance
 except keyboardInterrupt:
     motor1.clean()
     #motor2.clean()
