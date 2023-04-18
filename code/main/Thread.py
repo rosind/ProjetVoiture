@@ -18,23 +18,21 @@ class CapteurUltrasonThread(threading.Thread):
         return self.distance
 
 class CapteurInfrarougeThread(threading.Thread):
-    """Capteur TCRT5000 --> Pin 20"""
     def __init__(self, pin):
         threading.Thread.__init__(self)
-        self.pin = pin
-        self.detectLigne = False
+        self.capteur = CapteurInfrarouge(pin)
         self.running = True
+        self.etat = False
+
     def run(self):
         while self.running:
-            if GPIO.input(self.pin):
-                self.detectLigne = True
-                time.sleep(0.2)
+            if self.capteur.detect():
+                self.etat = False
+                return self.etat
             else:
-                self.detectLigne = False
-                time.sleep(0.2)
+                self.etat = True
+                return self.etat
+            time.sleep(0.1)
 
     def stop(self):
         self.running = False
-
-    def detect(self):
-        return self.detectLigne
