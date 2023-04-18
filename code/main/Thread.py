@@ -32,7 +32,7 @@ class CapteurInfrarougeThread(threading.Thread):
             else:
                 print("detect ko")
                 self.etat = True
-        return self.etat
+        #return self.etat
 
             time.sleep(0.1)
 
