@@ -1,12 +1,32 @@
 from capteurs import *
+from Thread import *
+import threading
 
 #capt1 = CapteurInfrarouge(20)
 #capt1.detect()
 
-ultrason = CapteurUltrason(26,19)
-try:
-    while True:
-        print(f"La distance est de {ultrason.distance()} cm.")
-        time.sleep(0.5)
-except KeyboardInterrupt:
-    ultrason.clean()
+ultrasonGauche = CapteurUltrason(11,9)
+ultrasonDroite = CapteurUltrason(26,19)
+ultrasonAvant = CapteurUltrason(6,5)
+
+th1 = CapteurUltrasonThread(ultrasonGauche)
+th2 = CapteurUltrasonThread(ultrasonDroite)
+th3 = CapteurUltrasonThread(ultrasonAvant)
+
+th1.start()
+th2.start()
+th3.start()
+
+time.sleep(2)
+
+print(f"Le capteur Avant: {th3.get_distance()}")
+print(f"Le capteur Droit: {th2.get_distance()}")
+print(f"Le capteur Gauche: {th1.get_distance()}")
+
+time.sleep(10)
+th1.stop()
+th2.stop()
+th3.stop()
+
+
+
