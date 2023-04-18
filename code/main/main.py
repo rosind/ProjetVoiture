@@ -27,7 +27,6 @@ for i in range(10):
     print(f"Le capteur Gauche: {th1.get_distance()}")
     print(f"Le capteur infrarouge est {th4.etat}")
 
-
 th1.stop()
 th2.stop()
 th3.stop()
