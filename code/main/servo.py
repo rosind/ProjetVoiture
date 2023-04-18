@@ -2,7 +2,7 @@
 import PCA9685 as servo
 import time                  # Import necessary modules
 
-MinPulse = 50
+MinPulse = 150
 MaxPulse = 450
 
 def setup():
