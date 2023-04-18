@@ -22,9 +22,9 @@ time.sleep(2)
 for i in range(10):
     time.sleep(2)
     print(f"Essaie {i}:")
-    print(f"Le capteur Avant: {th3.get_distance()}")
-    print(f"Le capteur Droit: {th2.get_distance()}")
-    print(f"Le capteur Gauche: {th1.get_distance()}")
+    print(f"Le capteur Avant: {th3.distance()}")
+    print(f"Le capteur Droit: {th2.distance()}")
+    print(f"Le capteur Gauche: {th1.distance()}")
     print(f"Le capteur infrarouge est {th4.etat}")
 
 th1.stop()
