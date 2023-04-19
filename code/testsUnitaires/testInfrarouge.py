@@ -1,7 +1,7 @@
 import unittest
 import sys
-sys.path.append('..')
-from main.capteurs import CapteurInfrarouge
+sys.path.append('../main')
+from capteurs import CapteurInfrarouge
 
 class TestCapteur(unittest.TestCase):
     def capteurInfraIsInstanceOfCapteurInfra(self):
