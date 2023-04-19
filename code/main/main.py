@@ -19,7 +19,7 @@ th3.start()
 
 time.sleep(2)
 
-for i in range(10):
+for i in range(100):
     time.sleep(2)
     print(f"Essaie {i}:")
     print(f"Le capteur Avant: {th3.distance} cm")

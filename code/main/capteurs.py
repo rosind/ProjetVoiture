@@ -42,6 +42,7 @@ class CapteurUltrason:
         pulseTotal= pulseEnd-pulseStart
         distance = pulseTotal*17150 #vitesse du son/2
         distance = round(distance,2)
+        print(distance)
 
         return distance
 
