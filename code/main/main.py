@@ -17,7 +17,7 @@ th2.start()
 th3.start()
 th4.start()
 
-time.sleep(2)
+time.sleep(1clear)
 
 for i in range(100):
     time.sleep(2)

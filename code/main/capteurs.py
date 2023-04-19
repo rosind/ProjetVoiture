@@ -42,13 +42,12 @@ class CapteurUltrason:
         pulseTotal= pulseEnd-pulseStart
         distance = pulseTotal*17150 #vitesse du son/2
         distance = round(distance,2)
-        if (distance > 120):
+        if (distance > 120): #Permet de définir les bornes du capteur
             distance=120
-        elif (distance < 2):
-            distance=2
+        elif (distance < 5):
+            distance=5
 
         return distance
-
 
     def clean(self):
         GPIO.cleanup()
