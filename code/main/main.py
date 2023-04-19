@@ -1,6 +1,4 @@
-from capteurs import *
 from Thread import *
-import threading
 
 ultrasonGauche = CapteurUltrason(11,9)
 ultrasonDroite = CapteurUltrason(26,19)
