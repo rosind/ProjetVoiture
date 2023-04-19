@@ -44,6 +44,8 @@ class CapteurUltrason:
         distance = round(distance,2)
         if (distance > 40):
             distance=40
+        if (distance < 0):
+            distance=0
         print(distance)
 
         return distance
