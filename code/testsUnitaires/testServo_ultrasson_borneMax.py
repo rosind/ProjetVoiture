@@ -3,7 +3,7 @@ import sys
 sys.path.append('../main')
 from capteurs import CapteurUltrason
 
-class TestCapteurClasse:
+class TestCapteurClasse(unittest.TestCase):
     def test_distanceMax40(self):
         capt1 = CapteurUltrason(6,5) #6,5 --> Capteur avant
         self.assertEqual(capt1.distance(),120)
