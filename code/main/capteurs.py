@@ -46,7 +46,6 @@ class CapteurUltrason:
             distance=40
         if (distance < 0):
             distance=0
-        print(distance)
 
         return distance
 
