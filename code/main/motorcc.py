@@ -17,6 +17,7 @@ class Car :
     pins = [Motor0_A, Motor0_B, Motor1_A, Motor1_B]
 
     def __init__(self,speed):
+        self.Motor0_A = 11
         self.speed = speed
 
 # ===========================================================================
