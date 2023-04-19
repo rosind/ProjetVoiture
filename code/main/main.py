@@ -20,7 +20,7 @@ th4.start()
 time.sleep(1)
 
 for i in range(100):
-    time.sleep(2)
+    time.sleep(1)
     print(f"Essaie {i}:")
     print(f"Le capteur Avant: {th3.distance} cm")
     print(f"Le capteur Droit: {th2.distance} cm")
