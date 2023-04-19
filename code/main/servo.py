@@ -34,3 +34,5 @@ def servo_test():
 if __name__ == '__main__':
     setup()
     servo_test()
+    time.sleep(5)
+    pwm.write(0,0,0)
