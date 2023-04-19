@@ -3,6 +3,9 @@ import PCA9685 as servo
 import time                  # Import necessary modules
 
 class Servo:
+    def __init__(self):
+        self.setup()
+        
     def setup(self):
         global pwm
         self.pwm = servo.PWM()
