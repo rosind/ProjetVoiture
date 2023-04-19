@@ -92,7 +92,6 @@ class Car :
         self.motor0(self.forward0)
         self.motor1(self.forward1)
     
-
     def backward(self):
         self.motor0(self.backward0)
         self.motor1(self.backward1)
