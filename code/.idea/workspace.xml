@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="9e93bdc5-2164-446b-8dbc-6044b58af7a9" name="Changes" comment="clean">
       <change beforePath="$PROJECT_DIR$/main/Thread.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/Thread.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/capteurs.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/capteurs.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +124,7 @@
       <workItem from="1681735531177" duration="6793000" />
       <workItem from="1681742947621" duration="2366000" />
       <workItem from="1681800540292" duration="10754000" />
-      <workItem from="1681887638557" duration="11419000" />
+      <workItem from="1681887638557" duration="11595000" />
     </task>
     <task id="LOCAL-00001" summary="r">
       <created>1681722565034</created>
