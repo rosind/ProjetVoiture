@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e93bdc5-2164-446b-8dbc-6044b58af7a9" name="Changes" comment="clean">
-      <change afterPath="$PROJECT_DIR$/tests unitaires/Test.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/motorcc.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/motorcc.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests unitaires/main/guiguipastouchecapteurs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests unitaires/main/test.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests unitaires/main/test_infrarouges.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests unitaires/main/test_ultrason.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests unitaires/Test.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -98,7 +91,7 @@
       <workItem from="1681735531177" duration="6793000" />
       <workItem from="1681742947621" duration="2366000" />
       <workItem from="1681800540292" duration="10754000" />
-      <workItem from="1681887638557" duration="4424000" />
+      <workItem from="1681887638557" duration="5391000" />
     </task>
     <task id="LOCAL-00001" summary="r">
       <created>1681722565034</created>
