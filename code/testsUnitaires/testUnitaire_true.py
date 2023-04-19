@@ -3,10 +3,10 @@ import sys
 sys.path.append('../main')
 from capteurs import CapteurInfrarouge
 
-class TestCapteurClasse(unittest.TestCase):
-    def test_capteurInfraIsInstanceOfCapteurInfra(self):
+class TestCapteurTrue(unittest.TestCase):
+    def test_capteurInfraIsTrue(self):
         cap1 = CapteurInfrarouge(20)
-        self.assertIsInstance(cap1, CapteurInfrarouge)
+        self.assertTrue(cap1.detect())
 
 if __name__ == '__main__':
     unittest.main()

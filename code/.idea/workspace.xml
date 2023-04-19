@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9e93bdc5-2164-446b-8dbc-6044b58af7a9" name="Changes" comment="clean">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testsUnitaires/Test.py" beforeDir="false" afterPath="$PROJECT_DIR$/testsUnitaires/Test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +41,22 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python tests.Python tests for testUnitaire_true.TestCapteurTrue.test_capteurInfraIsTrue">
+    <configuration name="Python tests for testUnitaire_true.TestCapteurTrue.test_capteurInfraIsTrue" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="code" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/testsUnitaires" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;testUnitaire_true.TestCapteurTrue.test_capteurInfraIsTrue&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="Python tests for testsUnitaires.testInfrarouge_classe.TestCapteur" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="code" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -90,6 +104,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.Python tests for testUnitaire_true.TestCapteurTrue.test_capteurInfraIsTrue" />
         <item itemvalue="Python tests.Python tests in testInfrarouge_classe.py" />
         <item itemvalue="Python tests.Python tests for testsUnitaires.testInfrarouge_classe.TestCapteur" />
         <item itemvalue="Python tests.Python tests in C:/Users/thiba/OneDrive - Haute Ecole en Hainaut/Info bac 1/Bac-2/Projet inter/projet_git/ProjetVoiture/code/tests unitaires/Test.py" />
@@ -108,7 +123,7 @@
       <workItem from="1681735531177" duration="6793000" />
       <workItem from="1681742947621" duration="2366000" />
       <workItem from="1681800540292" duration="10754000" />
-      <workItem from="1681887638557" duration="6409000" />
+      <workItem from="1681887638557" duration="8579000" />
     </task>
     <task id="LOCAL-00001" summary="r">
       <created>1681722565034</created>
@@ -156,6 +171,6 @@
     <SUITE FILE_PATH="coverage/code$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1681725400343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/code$Thread.coverage" NAME="Thread Coverage Results" MODIFIED="1681820031608" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
     <SUITE FILE_PATH="coverage/code$main.coverage" NAME="main Coverage Results" MODIFIED="1681742384144" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/main" />
-    <SUITE FILE_PATH="coverage/servo_test_py$.coverage" NAME=" Coverage Results" MODIFIED="1681894323069" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testsUnitaires" />
+    <SUITE FILE_PATH="coverage/servo_test_py$.coverage" NAME=" Coverage Results" MODIFIED="1681895704292" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/testsUnitaires" />
   </component>
 </project>
