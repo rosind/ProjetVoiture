@@ -1,7 +1,7 @@
 import unittest
 import sys
 sys.path.append('../main')
-from main.capteurs import CapteurUltrason
+from capteurs import CapteurUltrason
 
 class TestCapUltrason(unittest.TestCase):
     def testInstanceUltrason(self):
