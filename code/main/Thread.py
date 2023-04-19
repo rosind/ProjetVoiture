@@ -13,6 +13,7 @@ class CapteurUltrasonThread(threading.Thread):
             time.sleep(0.1)
             if (self.distance > 400):
                 self.distance = 400
+                print(self.distance)
     def stop(self):
         self.running = False
         #self.capteur.clean()
