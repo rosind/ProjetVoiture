@@ -2,7 +2,7 @@
 import PCA9685 as servo
 import time
 from motorcc import *
-from Thread import *
+import Thread
 from capteurs import *
 
 class Voiture:
@@ -18,10 +18,10 @@ class Voiture:
         self.ultrasonAvant = CapteurUltrason(6,5)
         self.capt1 = CapteurInfrarouge(20)
 
-        self.th1=CapteurUltrasonThread(self.ultrasonGauche)
-        self.th2=CapteurUltrasonThread(self.ultrasonDroite)
-        self.th3=CapteurUltrasonThread(self.ultrasonAvant)
-        self.th4=CapteurInfrarougeThread(self.capt1.pin)
+        self.th1=Thread.CapteurUltrasonThread(self.ultrasonGauche)
+        self.th2=Thread.CapteurUltrasonThread(self.ultrasonDroite)
+        self.th3=Thread.CapteurUltrasonThread(self.ultrasonAvant)
+        self.th4=Thread.CapteurInfrarougeThread(self.capt1.pin)
 
         self.th1.start()
         self.th2.start()
