@@ -1,4 +1,5 @@
 from capteurs import *
+from servo import *
 import threading
 class CapteurUltrasonThread(threading.Thread):
     def __init__(self, capteur):
