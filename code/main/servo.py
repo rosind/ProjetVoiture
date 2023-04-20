@@ -60,16 +60,6 @@ class Voiture() :
         self.voiture.stop()
 
     def cercle(self):
-        # self.voiture.set_speed()
-        # self.right()
-        # self.voiture.move_forward()
-        # time.sleep(5)
-        # self.start
-        # time.sleep(1)
-        # self.left()
-        # self.voiture.move_forward()
-        # time.sleep(5)
-        # self.stop_servo()
         self.voiture.set_speed()
         self.start()
         self.stop_voiture()
