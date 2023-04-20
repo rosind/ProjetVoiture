@@ -38,3 +38,12 @@ class CapteurInfrarougeThread(threading.Thread):
     def stop(self):
         self.running = False
 
+class VoitureThread(threading.Thread):
+    def __init__(self,voiture,speed):
+        threading.Thread.__init__(self)
+        self.voiture=voiture
+        self.voiture = Voiture(speed)
+        self.running = False
+    def setup(self):
+        self.voiture.setup()
+

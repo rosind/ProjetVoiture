@@ -6,15 +6,11 @@ from motorcc import *
 class Voiture() :
     def __init__(self,speed):
         self.speed = speed
-        self.setup()
         self.voiture = drive(self.speed)
-        
-    def setup(self):
-        global pwm
         self.pwm = servo.PWM()
         self.pwm.frequency = 50
         self.value=350
-        
+
     def changeSpeed(self,speed):
         self.speed = speed
 
@@ -91,6 +87,9 @@ class Voiture() :
     def recule(self):
         self.voiture.set_speed()
         self.voiture.move_backward()
-    
-            
 
+if __name__ == '__main__':
+    voit1 = Voiture(30)
+    voit1.avance()
+    time.sleep(5)
+    voit1.stop_voiture()
