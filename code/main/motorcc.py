@@ -6,7 +6,7 @@ import time    # Import necessary modules
 class drive:
     def __init__(self, speed):
         self.speed = speed
-        self.motor_pins = [11, 12, 13, 15]
+        self.motor_pins = [17, 18, 27, 22]
         self.EN_M0, self.EN_M1 = [4, 5]
         self.forward0, self.forward1 = [True, True]
         self.backward0 = not self.forward0
@@ -21,7 +21,7 @@ class drive:
 
         self.pwm.frequency = 60
         GPIO.setwarnings(False)
-        GPIO.setmode(GPIO.BOARD)        # Number GPIOs by its physical location
+        GPIO.setmode(GPIO.BCM)        # Number GPIOs by its physical location
         
         for pin in self.motor_pins:
             GPIO.setup(pin, GPIO.OUT)   # Set all pins' mode as output
