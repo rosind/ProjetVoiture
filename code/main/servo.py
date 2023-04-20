@@ -42,32 +42,32 @@ class Voiture:
 
     def right(self, a=60):
         if self.value - a < self.value-75 or self.value + a > self.value+75:
-            print("Valeur comprise entre 250 et 450")
+            #print("Valeur comprise entre 250 et 450")
         else:
             self.pwm.write(0,0,self.value + a)
-            print("Tourne à droite", a, ' (', self.value + a, ')')
+            #print("Tourne à droite", a, ' (', self.value + a, ')')
 
     def left(self, a=60):
         if self.value - a < self.value-75 or self.value + a > self.value+75:
-            print("Valeur comprise entre 250 et 450")
+            #print("Valeur comprise entre 250 et 450")
         else: 
             self.pwm.write(0,0,150)#self.value - a)
-            print("Tourne à gauche", a, ' (', self.value + a, ')')
+            #print("Tourne à gauche", a, ' (', self.value + a, ')')
     
     def start(self, a=60):
         if self.value - a < self.value-75 or self.value + a > self.value+75:
-            print("Valeur comprise entre 250 et 450")
+            #print("Valeur comprise entre 250 et 450")
         else: 
-            self.pwm.write(0,0,300)
-            print("position de départ")
+            self.pwm.write(0,0,290)
+            #print("position de départ")
 
     def turn(self,angle):
         self.pwm.write(0,0,angle)
-        print("tourne à un angle de : ",angle,"degrés")
+        #print("tourne à un angle de : ",angle,"degrés")
 
     def servo_test(self):
         if self.value < 300 or self.value > 420:
-            print("Valeur comprise entre 250 et 450")
+            #print("Valeur comprise entre 250 et 450")
         else:
             self.pwm.write(0,0,225)
             time.sleep(1)

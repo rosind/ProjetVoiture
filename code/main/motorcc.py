@@ -28,7 +28,7 @@ class drive:
 
     def set_speed(self):
         #self.speed *= 40
-        print('Speed is:', self.speed)
+        #print('Speed is:', self.speed)
         self.pwm.write(self.EN_M0, 0, self.speed)
         self.pwm.write(self.EN_M1, 0, self.speed)
 
