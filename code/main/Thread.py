@@ -22,7 +22,7 @@ class CapteurInfrarougeThread(threading.Thread):
         self.capteur = CapteurInfrarouge(pin)
         self.running = True
         self.etat = False
-        self.detectLine = self.capteur.detect()
+        self.passeligne = self.capteur.detect()
 
     def run(self):
         while (self.running):
