@@ -14,6 +14,9 @@ class Voiture() :
         self.pwm = servo.PWM()
         self.pwm.frequency = 50
         self.value=350
+        
+    def changeSpeed(self,speed):
+        self.speed = speed
 
     def right(self, a=60):
         if self.value - a < self.value-75 or self.value + a > self.value+75:
