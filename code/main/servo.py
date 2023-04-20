@@ -144,7 +144,7 @@ class Voiture:
                 self.avance()
                 time.sleep(1)
                 self.stop_voiture()
-            else :
+            if (self.th2.distance <self.th2.distance):
                 self.turn(200)
                 time.sleep(0.5)
                 self.avance()
