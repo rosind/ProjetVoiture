@@ -23,7 +23,6 @@ while (tour > 0):
     print(f"Le capteur Droit: {th2.distance} cm")
     print(f"Le capteur Gauche: {th1.distance} cm")
     print(f"Le capteur infrarouge est {th4.etat}")
-    print(tour)
     if (th4.etat==True):
         tour-=1
         i+=1
