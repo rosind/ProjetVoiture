@@ -130,7 +130,7 @@ class Voiture:
             self.turn(200) # vitesse de base : 150
             time.sleep(0.5)
             self.avance()
-        elif(self.th3.distance <= 20):
+        elif(self.th3.distance <= 30):
             self.stop_voiture()
             self.recule()
             time.sleep(2)
