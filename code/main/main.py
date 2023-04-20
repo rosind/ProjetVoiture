@@ -5,9 +5,10 @@ voit1 = Voiture(60)
 
 tour = int(input("Entre le nombre de tours:"))
 #while (tour > 0):
-for i in range(50)
+for i in range(20):
+    print(i)
     voit1.mur_gauche()
-    print(voit1.detect_Line())
+    #print(voit1.detect_Line())
     #if voit1.detect_Line():
         #tour-=1
 
