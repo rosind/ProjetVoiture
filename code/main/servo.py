@@ -34,8 +34,8 @@ class Voiture:
         self.th3.stop()
         self.th4.stop()
         
-    def detectLine(self):
-        return self.detectLine()
+    def detect_Line(self):
+        return self.th4.passeligne
     
     def changeSpeed(self,speed):
         self.speed = speed
