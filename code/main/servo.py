@@ -87,3 +87,26 @@ class Voiture:
     def recule(self):
         self.voiture.set_speed()
         self.voiture.move_backward()
+        
+    def suivreMur(self):
+        self.voiture.set_speed()
+        self.start()
+        self.avance()
+        if (th1.distance <= 15):
+            self.turn(390) # vitesse de base : 410
+        elif(th2.distance <= 15):
+            self.turn(200) # vitesse de base : 150
+        elif(th3.distance <= 20):
+            self.stop_voiture()
+            self.voiture.move_backward()
+            time.sleep(2)
+            self.stop_voiture()
+            if(th1.distance<th2.distance):
+                 self.turn(390)
+                 self.avance()
+                 time.sleep(1)
+                 self.stop_voiture()
+            else : 
+                 self.turn(200)
+        else : 
+            self.avance()
