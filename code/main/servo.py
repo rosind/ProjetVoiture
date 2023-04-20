@@ -2,6 +2,8 @@
 import PCA9685 as servo
 import time
 from motorcc import *
+from Thread import *
+from capteurs import *
 
 class Voiture:
     def __init__(self,speed):
@@ -10,6 +12,27 @@ class Voiture:
         self.pwm = servo.PWM()
         self.pwm.frequency = 50
         self.value=350
+
+        self.ultrasonGauche = CapteurUltrason(11,9)
+        self.ultrasonDroite = CapteurUltrason(26,19)
+        self.ultrasonAvant = CapteurUltrason(6,5)
+        self.capt1 = CapteurInfrarouge(20)
+
+        self.th1=CapteurUltrasonThread(self.ultrasonGauche)
+        self.th2=CapteurUltrasonThread(self.ultrasonDroite)
+        self.th3=CapteurUltrasonThread(self.ultrasonAvant)
+        self.th4=CapteurInfrarougeThread(self.capt1.pin)
+
+        self.th1.start()
+        self.th2.start()
+        self.th3.start()
+        self.th4.start()
+
+    def stopThread(self):
+        self.th1.stop()
+        self.th2.stop()
+        self.th3.stop()
+        self.th4.stop()
 
     def changeSpeed(self,speed):
         self.speed = speed
@@ -92,16 +115,16 @@ class Voiture:
         self.voiture.set_speed()
         self.start()
         self.avance()
-        if (th1.distance <= 15):
+        if (self.th1.distance <= 15):
             self.turn(390) # vitesse de base : 410
-        elif(th2.distance <= 15):
+        elif(self.th2.distance <= 15):
             self.turn(200) # vitesse de base : 150
-        elif(th3.distance <= 20):
+        elif(self.th3.distance <= 20):
             self.stop_voiture()
             self.voiture.move_backward()
             time.sleep(2)
             self.stop_voiture()
-            if(th1.distance<th2.distance):
+            if(self.th1.distance<self.th2.distance):
                  self.turn(390)
                  self.avance()
                  time.sleep(1)
