@@ -37,23 +37,3 @@ class CapteurInfrarougeThread(threading.Thread):
     def stop(self):
         self.running = False
 
-class ThreadTriangulation:
-    def __init__(self, triangulation):
-        self.triangulation = triangulation
-        self.thread_droit = threading.Thread(target=self.mesure_capteur, args=(self.triangulation.capteur_droit,))
-        self.thread_gauche = threading.Thread(target=self.mesure_capteur, args=(self.triangulation.capteur_gauche,))
-        self.thread_avant = threading.Thread(target=self.mesure_capteur, args=(self.triangulation.capteur_avant,))
-
-    def mesure_capteur(self, capteur):
-        while True:
-            capteur.distance()
-
-    def start(self):
-        self.thread_droit.start()
-        self.thread_gauche.start()
-        self.thread_avant.start()
-
-    def join(self):
-        self.thread_droit.join()
-        self.thread_gauche.join()
-        self.thread_avant.join()
