@@ -2,11 +2,11 @@ import time
 from ina219 import INA219
 from ina219 import DeviceRangeError
 
-class Ina219():
-    
-    def testcourant():
-        def __init__(self):
+class CaptCourant():
+    def __init__(self):
             pass
+    
+    def testcourant(self):
         
         ina = INA219(0.1)
         ina.configure()
@@ -18,6 +18,10 @@ class Ina219():
         except DeviceRangeError as e:
             # Current out of device range with specified shunt resistor
             print(e)
+            
 if __name__ == '__main__':
-    mytestcourant = Ina219()
-    mytestcourant.testcourant()
+    mytestcourant = CaptCourant()
+    while True:
+        mytestcourant.testcourant()
+        time.sleep(3)
+        
