@@ -5,6 +5,9 @@ ultrasonGauche = CapteurUltrason(11,9)
 ultrasonDroite = CapteurUltrason(26,19)
 ultrasonAvant = CapteurUltrason(6,5)
 capt1 = CapteurInfrarouge(20)
+
+voit1 = Voiture(40)
+
 th1 = CapteurUltrasonThread(ultrasonGauche)
 th2 = CapteurUltrasonThread(ultrasonDroite)
 th3 = CapteurUltrasonThread(ultrasonAvant)
@@ -18,7 +21,7 @@ time.sleep(1)
 tour = int(input("Entre le nombre de tours:"))
 i=1
 while (tour > 0):
-    #
+    voit1.suivreMur()
     if (th4.etat==True):
         tour-=1
         i+=1
