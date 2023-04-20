@@ -42,6 +42,7 @@ class Voiture:
 
     def right(self, a=60):
         if self.value - a < self.value-75 or self.value + a > self.value+75:
+            pass
             #print("Valeur comprise entre 250 et 450")
         else:
             self.pwm.write(0,0,self.value + a)
@@ -49,6 +50,7 @@ class Voiture:
 
     def left(self, a=60):
         if self.value - a < self.value-75 or self.value + a > self.value+75:
+            pass
             #print("Valeur comprise entre 250 et 450")
         else: 
             self.pwm.write(0,0,150)#self.value - a)
@@ -56,6 +58,7 @@ class Voiture:
     
     def start(self, a=60):
         if self.value - a < self.value-75 or self.value + a > self.value+75:
+            pass
             #print("Valeur comprise entre 250 et 450")
         else: 
             self.pwm.write(0,0,290)
