@@ -61,7 +61,7 @@ class Voiture:
             pass
             #print("Valeur comprise entre 250 et 450")
         else: 
-            self.pwm.write(0,0,290)
+            self.pwm.write(0,0,260)
             #print("position de départ")
 
     def turn(self,angle):
@@ -118,25 +118,28 @@ class Voiture:
         self.voiture.set_speed()
         self.voiture.move_backward()
         
-    def suivreMur(self):
+    def autonome(self):
         self.start()
         time.sleep(0.5)
         self.avance()
         if (self.th1.distance <= 15):
-            self.turn(390) # vitesse de base : 410
+            self.turn(310) # vitesse de base : 410
             time.sleep(0.5) 
             self.avance()
         elif(self.th2.distance <= 15):
             self.turn(200) # vitesse de base : 150
             time.sleep(0.5)
             self.avance()
-        elif(self.th3.distance <= 30):
+        elif(self.th3.distance <= 20):
             self.stop_voiture()
             self.recule()
-            time.sleep(2)
+            if(self.speed<=40):
+                time.sleep(1.5)
+            else : 
+                time.sleep(1)
             self.stop_voiture()
             if(self.th1.distance<self.th2.distance):
-                 self.turn(390)
+                 self.turn(310)
                  time.sleep(0.5)
                  self.avance()
                  time.sleep(1)
