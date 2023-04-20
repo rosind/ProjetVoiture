@@ -16,7 +16,7 @@ class CapteurInfrarouge:
             #print("Je ne détecte pas la ligne noir !")
             detectLigne = False
             time.sleep(0.2)
-
+        print(f"{detectLigne} capteur")
         return detectLigne
 class CapteurUltrason:
     """Capteur HC-SR04 --> trig=26 echo=19 (capteur droit) // trig=11 echo=9 (capteur gauche) // trig=6 echo=5 (avant)"""
