@@ -4,11 +4,12 @@ from servo import *
 voit1 = Voiture(60)
 
 tour = int(input("Entre le nombre de tours:"))
-while (tour > 0):
-    voit1.autonome()
+#while (tour > 0):
+for i in range(50)
+    voit1.mur_gauche()
     print(voit1.detect_Line())
-    if voit1.detect_Line():
-        tour-=1
+    #if voit1.detect_Line():
+        #tour-=1
 
 print("Fin de course !")
 voit1.stopThread()

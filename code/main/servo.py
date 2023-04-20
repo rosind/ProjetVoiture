@@ -152,4 +152,52 @@ class Voiture:
                  self.stop_voiture()
         else : 
             self.avance()
-            
+
+    def mur_gauche(self):
+        self.start()
+        time.sleep(0.5)
+        self.avance()
+        if (self.th1.distance <=15):
+            self.turn(310)
+            time.sleep(0.5)
+            self.start()
+            time.sleep(0.5)
+            self.avance()
+        if (self.th1.distance >= 40):
+            self.turn(200)
+            time.sleep(0.5)
+            self.start(0.5)
+            self.avance()
+    def mur_gauche(self):
+        self.start()
+        time.sleep(0.5)
+        self.avance()
+        if (self.th1.distance <=15):
+            self.turn(310)
+            time.sleep(0.5)
+            self.start()
+            time.sleep(0.5)
+            self.avance()
+        if (self.th1.distance >= 40):
+            self.turn(200)
+            time.sleep(0.5)
+            self.start()
+            time.sleep(0.5)
+            self.avance()
+
+    def mur_droite(self):
+        self.start()
+        time.sleep(0.5)
+        self.avance()
+        if (self.th2.distance <=15):
+            self.turn(200)
+            time.sleep(0.5)
+            self.start()
+            time.sleep(0.5)
+            self.avance()
+        if (self.th2.distance >= 40):
+            self.turn(310)
+            time.sleep(0.5)
+            self.start()
+            time.sleep(0.5)
+            self.avance()
