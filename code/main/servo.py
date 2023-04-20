@@ -8,7 +8,7 @@ from capteurs import *
 class Voiture:
     def __init__(self,speed):
         self.speed = speed
-        self.voiture = drive(self.speed)
+        self.voiture = drive(self.speed*40)
         self.pwm = servo.PWM()
         self.pwm.frequency = 50
         self.value=350
