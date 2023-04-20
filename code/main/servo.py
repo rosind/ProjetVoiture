@@ -12,14 +12,14 @@ class Servo:
         self.pwm.frequency = 50
         self.value=350
 
-    def rigth(self, a=60):
+    def rigth(self, a=60): #a = la quantité de rotation
         if self.value - a < self.value-75 or self.value + a > self.value+75:
             print("Valeur comprise entre 250 et 450")
         else:
             self.pwm.write(1,0,self.value + a)
             print("Tourne à droite", a, ' (', self.value + a, ')')
 
-    def left(self, a=60):
+    def left(self, a=60): #a = la quantité de rotation
         if self.value - a < self.value-75 or self.value + a > self.value+75:
             print("Valeur comprise entre 250 et 450")
         else: 
