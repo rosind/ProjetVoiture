@@ -88,44 +88,9 @@ class Voiture() :
         self.voiture.stop()
         time.sleep(1)
         self.start()
+        time.sleep(1.5)
         self.stop_servo()
 
     
             
 
-"""
-MinPulse = 150
-MaxPulse = 450
-
-
-
-def servo_test():
-    
-    while True:
-
-        for value in range(MinPulse, MaxPulse, 25):
-            print ('PWM value: %d' % value)
-            pwm.write(0, 0, value)
-            #pwm.write(14, 0, value)
-            #pwm.write(15, 0, value)
-            time.sleep(0.1)
-
-        for value in range(MaxPulse, MinPulse, -25):
-            print ('PWM value: %d' % value)
-            pwm.write(0, 0, value)
-            #pwm.write(14, 0, value)
-            #pwm.write(15, 0, value)
-            time.sleep(0.1)
-
-
-        pwm.write(0, 0, 350)
-"""
-
-
-""" if __name__ == '__main__':
-    MyServo=Servo()
-    MyServo.setup()
-    MyServo.servo_test()
-    #setup()
-    #Servo_test()
- """
