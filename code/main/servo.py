@@ -2,6 +2,8 @@
 import PCA9685 as servo
 import time
 from motorcc import *
+import Thread
+from capteurs import *
 
 class Voiture:
     def __init__(self,speed):
@@ -11,6 +13,30 @@ class Voiture:
         self.pwm.frequency = 50
         self.value=350
 
+        self.ultrasonGauche = CapteurUltrason(11,9)
+        self.ultrasonDroite = CapteurUltrason(26,19)
+        self.ultrasonAvant = CapteurUltrason(6,5)
+        self.capt1 = CapteurInfrarouge(20)
+
+        self.th1=Thread.CapteurUltrasonThread(self.ultrasonGauche)
+        self.th2=Thread.CapteurUltrasonThread(self.ultrasonDroite)
+        self.th3=Thread.CapteurUltrasonThread(self.ultrasonAvant)
+        self.th4=Thread.CapteurInfrarougeThread(self.capt1.pin)
+
+        self.th1.start()
+        self.th2.start()
+        self.th3.start()
+        self.th4.start()
+
+    def stopThread(self):
+        self.th1.stop()
+        self.th2.stop()
+        self.th3.stop()
+        self.th4.stop()
+        
+    def detect_Line(self):
+        return self.th4.passeligne
+    
     def changeSpeed(self,speed):
         self.speed = speed
 
@@ -87,3 +113,35 @@ class Voiture:
     def recule(self):
         self.voiture.set_speed()
         self.voiture.move_backward()
+        
+    def suivreMur(self):
+        self.start()
+        time.sleep(0.5)
+        self.avance()
+        if (self.th1.distance <= 15):
+            self.turn(390) # vitesse de base : 410
+            time.sleep(0.5) 
+            self.avance()
+        elif(self.th2.distance <= 15):
+            self.turn(200) # vitesse de base : 150
+            time.sleep(0.5)
+            self.avance()
+        elif(self.th3.distance <= 20):
+            self.stop_voiture()
+            self.recule()
+            time.sleep(2)
+            self.stop_voiture()
+            if(self.th1.distance<self.th2.distance):
+                 self.turn(390)
+                 time.sleep(0.5)
+                 self.avance()
+                 time.sleep(1)
+                 self.stop_voiture()
+            else : 
+                 self.turn(200)
+                 time.sleep(0.5)
+                 self.avance()
+                 time.sleep(1)
+                 self.stop_voiture()
+        else : 
+            self.avance()

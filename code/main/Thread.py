@@ -22,6 +22,7 @@ class CapteurInfrarougeThread(threading.Thread):
         self.capteur = CapteurInfrarouge(pin)
         self.running = True
         self.etat = False
+        self.passeligne = self.capteur.detect()
 
     def run(self):
         while (self.running):
@@ -43,6 +44,10 @@ class VoitureThread(threading.Thread):
         threading.Thread.__init__(self)
         self.voiture=voiture
         self.voiture = Voiture(speed)
-        self.running = False
-    def
+        self.running = True
+    def run(self):
+        while (self.running):
+            pass
+    def stop(self):
+        self.running=False
 
