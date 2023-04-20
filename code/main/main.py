@@ -16,6 +16,7 @@ time.sleep(1)
 
 tour = int(input("Entre le nombre de tours:"))
 while (tour > 0):
+    i=1
     time.sleep(1)
     print(f"Essaie {i}:")
     print(f"Le capteur Avant: {th3.distance} cm")
@@ -25,6 +26,7 @@ while (tour > 0):
     print(tour)
     if (th4.etat==True):
         tour-=1
+        i+=1
 
 
 th1.stop()
