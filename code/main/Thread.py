@@ -43,6 +43,10 @@ class VoitureThread(threading.Thread):
         threading.Thread.__init__(self)
         self.voiture=voiture
         self.voiture = Voiture(speed)
-        self.running = False
-    def
+        self.running = True
+    def run(self):
+        while (self.running):
+            pass
+    def stop(self):
+        self.running=False
 
