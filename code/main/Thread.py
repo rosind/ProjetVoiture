@@ -36,3 +36,4 @@ class CapteurInfrarougeThread(threading.Thread):
 
     def stop(self):
         self.running = False
+

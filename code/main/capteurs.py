@@ -55,3 +55,4 @@ class CapteurUltrason:
 class CapteurRGBDetector:
     """Capteur TCS3472"""
     pass
+
