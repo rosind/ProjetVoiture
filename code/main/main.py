@@ -28,6 +28,7 @@ while (tour > 0):
         tour-=1
         i+=1
 
+print("Fin de course !")
 th1.stop()
 th2.stop()
 th3.stop()
