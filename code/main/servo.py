@@ -33,10 +33,11 @@ class Voiture:
         self.th2.stop()
         self.th3.stop()
         self.th4.stop()
-        
+
     def detect_Line(self):
+        print(self.th4.passeligne)
         return self.th4.passeligne
-    
+
     def changeSpeed(self,speed):
         self.speed = speed
 
@@ -52,16 +53,16 @@ class Voiture:
         if self.value - a < self.value-75 or self.value + a > self.value+75:
             pass
             #print("Valeur comprise entre 250 et 450")
-        else: 
+        else:
             self.pwm.write(0,0,150)#self.value - a)
             #print("Tourne à gauche", a, ' (', self.value + a, ')')
-    
+
     def start(self, a=60):
         if self.value - a < self.value-75 or self.value + a > self.value+75:
             pass
             #print("Valeur comprise entre 250 et 450")
-        else: 
-            self.pwm.write(0,0,290)
+        else:
+            self.pwm.write(0,0,260)
             #print("position de départ")
 
     def turn(self,angle):
@@ -109,7 +110,7 @@ class Voiture:
         self.start()
         time.sleep(1.5)
         self.stop_servo()
-        
+
     def avance(self):
         self.voiture.set_speed()
         self.voiture.move_forward()
@@ -117,35 +118,71 @@ class Voiture:
     def recule(self):
         self.voiture.set_speed()
         self.voiture.move_backward()
-        
-    def suivreMur(self):
+
+    def autonome(self):
         self.start()
         time.sleep(0.5)
         self.avance()
         if (self.th1.distance <= 15):
-            self.turn(390) # vitesse de base : 410
-            time.sleep(0.5) 
+            self.turn(310) # vitesse de base : 410
+            time.sleep(0.5)
             self.avance()
         elif(self.th2.distance <= 15):
             self.turn(200) # vitesse de base : 150
             time.sleep(0.5)
             self.avance()
-        elif(self.th3.distance <= 30):
+        elif(self.th3.distance <= 20):
             self.stop_voiture()
             self.recule()
-            time.sleep(2)
+            if(self.speed<=40):
+                time.sleep(1.5)
+            else :
+                time.sleep(1)
             self.stop_voiture()
             if(self.th1.distance<self.th2.distance):
-                 self.turn(390)
-                 time.sleep(0.5)
-                 self.avance()
-                 time.sleep(1)
-                 self.stop_voiture()
-            else : 
-                 self.turn(200)
-                 time.sleep(0.5)
-                 self.avance()
-                 time.sleep(1)
-                 self.stop_voiture()
-        else : 
+                self.turn(310)
+                time.sleep(0.5)
+                self.avance()
+                time.sleep(1)
+                self.stop_voiture()
+            if (self.th2.distance <self.th2.distance):
+                self.turn(200)
+                time.sleep(0.5)
+                self.avance()
+                time.sleep(1)
+                self.stop_voiture()
+        else :
+            self.avance()
+    def mur_gauche(self):
+        self.start()
+        time.sleep(0.5)
+        self.avance()
+        if (self.th1.distance <=18):
+            self.turn(283)
+            time.sleep(0.4)
+            self.start()
+            time.sleep(0.5)
+            self.avance()
+        if (self.th1.distance >= 60):
+            self.turn(235)
+            time.sleep(1)
+            self.start()
+            time.sleep(0.5)
+            self.avance()
+
+    def mur_droite(self):
+        self.start()
+        time.sleep(0.5)
+        self.avance()
+        if (self.th2.distance <=15):
+            self.turn(240)
+            time.sleep(0.4)
+            self.start()
+            time.sleep(0.5)
+            self.avance()
+        if (self.th2.distance >= 60):
+            self.turn(283)
+            time.sleep(1)
+            self.start()
+            time.sleep(0.5)
             self.avance()
