@@ -1,7 +1,7 @@
 from Thread import *
 from servo import *
 
-voit1 = Voiture(40)
+voit1 = Voiture(60)
 
 tour = int(input("Entre le nombre de tours:"))
 while (tour > 0):
