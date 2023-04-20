@@ -3,7 +3,7 @@ import PCA9685 as servo
 import time
 from motorcc import *
 
-class Voiture() :
+class Voiture:
     def __init__(self,speed):
         self.speed = speed
         self.voiture = drive(self.speed)
@@ -87,9 +87,3 @@ class Voiture() :
     def recule(self):
         self.voiture.set_speed()
         self.voiture.move_backward()
-
-if __name__ == '__main__':
-    voit1 = Voiture(30)
-    voit1.avance()
-    time.sleep(5)
-    voit1.stop_voiture()

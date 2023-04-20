@@ -44,6 +44,5 @@ class VoitureThread(threading.Thread):
         self.voiture=voiture
         self.voiture = Voiture(speed)
         self.running = False
-    def setup(self):
-        self.voiture.setup()
+    def
 
