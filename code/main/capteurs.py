@@ -55,3 +55,30 @@ class CapteurUltrason:
 class CapteurRGBDetector:
     """Capteur TCS3472"""
     pass
+
+class TriangulationVoiture:
+    def __init__(self):
+        self.capteur_droit = CapteurUltrason(trig=26, echo=19)
+        self.capteur_gauche = CapteurUltrason(trig=11, echo=9)
+        self.capteur_avant = CapteurUltrason(trig=6, echo=5)
+        self.x = 0
+        self.y = 0
+
+    def trianguler_position(self):
+        # positions des capteurs
+        pos_droit = (0, 0)
+        pos_gauche = (0, 10)
+        pos_avant = (5, 5)
+
+        # boucle principale pour la triangulation
+        while True:
+            distance_droit = self.capteur_droit.distance()
+            distance_gauche = self.capteur_gauche.distance()
+            distance_avant = self.capteur_avant.distance()
+
+            # calcul de la position de la voiture
+            trilat = Trilateration(pos_droit, pos_gauche, pos_avant)
+            self.x, self.y = trilat.trilaterate(distance_droit, distance_gauche, distance_avant)
+
+    def get_position(self):
+        return self.x, self.y
