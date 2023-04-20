@@ -70,6 +70,7 @@ class Voiture:
 
     def servo_test(self):
         if self.value < 300 or self.value > 420:
+            pass
             #print("Valeur comprise entre 250 et 450")
         else:
             self.pwm.write(0,0,225)
