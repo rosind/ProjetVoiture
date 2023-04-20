@@ -80,7 +80,14 @@ class Voiture() :
         self.start()
         time.sleep(1.5)
         self.stop_servo()
+        
+    def avance(self):
+        self.voiture.set_speed()
+        self.voiture.move_forward()
 
+    def recule(self):
+        self.voiture.set_speed()
+        self.voiture.move_backward()
     
             
 
