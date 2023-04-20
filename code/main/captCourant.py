@@ -23,4 +23,5 @@ if __name__ == '__main__':
     mytestcourant = CaptCourant()
     while True:
         mytestcourant.testcourant()
+        time.sleep(3)
         
