@@ -6,6 +6,7 @@ voit1 = Voiture(40)
 tour = int(input("Entre le nombre de tours:"))
 while (tour > 0):
     voit1.suivreMur()
+    print(voit1.detect_Line())
     if voit1.detect_Line():
         tour-=1
 
