@@ -20,8 +20,10 @@ class Race:
         threadCaptGauche.start()
         threadInfra.start()
         
-    def race(self):
-        self.threadInfra = InfraredSensor(laps)
+    def race(self, laps):
+        self.threadInfra = (laps)
+
+
         self.motor.moveForward(50)
         while self.infraredSensor.getLaps() > 0:
             self.infraredSensor.isOn()
