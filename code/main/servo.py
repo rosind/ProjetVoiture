@@ -33,7 +33,10 @@ class Voiture:
         self.th2.stop()
         self.th3.stop()
         self.th4.stop()
-
+        
+    def detectLine(self):
+        self.detectLine()
+    
     def changeSpeed(self,speed):
         self.speed = speed
 
@@ -112,24 +115,33 @@ class Voiture:
         self.voiture.move_backward()
         
     def suivreMur(self):
-        self.voiture.set_speed()
         self.start()
+        time.sleep(0.5)
         self.avance()
         if (self.th1.distance <= 15):
             self.turn(390) # vitesse de base : 410
+            time.sleep(0.5) 
+            self.avance()
         elif(self.th2.distance <= 15):
             self.turn(200) # vitesse de base : 150
+            time.sleep(0.5)
+            self.avance()
         elif(self.th3.distance <= 20):
             self.stop_voiture()
-            self.voiture.move_backward()
+            self.recule()
             time.sleep(2)
             self.stop_voiture()
             if(self.th1.distance<self.th2.distance):
                  self.turn(390)
+                 time.sleep(0.5)
                  self.avance()
                  time.sleep(1)
                  self.stop_voiture()
             else : 
                  self.turn(200)
+                 time.sleep(0.5)
+                 self.avance()
+                 time.sleep(1)
+                 self.stop_voiture()
         else : 
             self.avance()
