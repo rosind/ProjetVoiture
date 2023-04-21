@@ -1,6 +1,8 @@
 from capteurs import *
 from servo import *
 import threading
+from collections import deque
+from statistics import mean
 class CapteurUltrasonThread(threading.Thread):
     def __init__(self, capteur):
         threading.Thread.__init__(self)
@@ -10,7 +12,10 @@ class CapteurUltrasonThread(threading.Thread):
     def run(self):
         self.running = True
         while self.running:
-            self.distance = self.capteur.distance()
+            liste_distance=deque(maxlen=10)
+            liste_distance.append(self.capteur.distance)
+            self.distance =mean(liste_distance)
+            print(self.distance)
             time.sleep(0.1)
     def stop(self):
         self.running = False
