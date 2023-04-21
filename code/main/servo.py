@@ -36,7 +36,16 @@ class Voiture:
 
     def detect_Line(self):
         #print(self.th4.passeligne)
-        return self.th4.passeligne
+        t1 = time.time()
+        time.sleep(2)
+        timeTotal = time.time()-t1
+        if self.th4.passeligne:
+            if (self.th4.passeligne > timeTotal):
+                return self.th4.passeligne
+            else:
+                self.th4.passeligne = False
+        else:
+            return self.th4.passeligne
 
     def changeSpeed(self,speed):
         self.speed = speed
