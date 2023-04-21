@@ -46,6 +46,7 @@ class Voiture:
                 #self.th4.passeligne = False
         #else:
         return self.th4.passeligne
+        time.sleep(1)
 
     def changeSpeed(self,speed):
         self.speed = speed
