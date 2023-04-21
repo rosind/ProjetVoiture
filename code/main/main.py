@@ -2,7 +2,7 @@ from Thread import *
 from servo import *
 from captCourant import *
 
-voit1 = Voiture(60)
+voit1 = Voiture(40)
 voit1.startThread()
 courant = CaptCourant()
 
