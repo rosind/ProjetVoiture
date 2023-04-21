@@ -199,3 +199,8 @@ class Voiture:
             self.start()
             time.sleep(0.3)
             self.avance()
+
+    def testCapteurs(self):
+        print(self.th1.distance)
+        print(self.th2.distance)
+        print(self.th3.distance)
