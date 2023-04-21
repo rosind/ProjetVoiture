@@ -23,6 +23,8 @@ class Voiture:
         self.th3=Thread.CapteurUltrasonThread(self.ultrasonAvant)
         self.th4=Thread.CapteurInfrarougeThread(self.capt1.pin)
 
+
+    def startThread(self):
         self.th1.start()
         self.th2.start()
         self.th3.start()
@@ -90,25 +92,26 @@ class Voiture:
         self.voiture.stop()
 
     def cercle(self):
-        self.voiture.set_speed()
+        #self.voiture.set_speed()
         self.start()
-        self.stop_voiture()
+        #self.stop_voiture()
+        time.sleep(0.5)
         self.right()
-        time.sleep(1)
-        self.voiture.move_forward()
-        time.sleep(5)
+        time.sleep(0.5)
+        self.avance()
+        time.sleep(4)
         self.stop_voiture()
         time.sleep(0.5)
         # self.start()
         # time.sleep(2)
         self.left()
-        time.sleep(1)
-        self.voiture.move_forward()
-        time.sleep(5)
+        time.sleep(0.5)
+        self.avance()
+        time.sleep(4)
         self.voiture.stop()
-        time.sleep(1)
+        time.sleep(0.5)
         self.start()
-        time.sleep(1.5)
+        time.sleep(0.5)
         self.stop_servo()
 
     def avance(self):
@@ -121,33 +124,33 @@ class Voiture:
 
     def autonome(self):
         self.start()
-        time.sleep(0.5)
+        time.sleep(0.3)
         self.avance()
         if (self.th1.distance <= 15):
-            self.turn(310) # vitesse de base : 410
-            time.sleep(0.5)
+            self.turn(290) # vitesse de base : 410
+            time.sleep(0.2)
             self.avance()
         elif(self.th2.distance <= 15):
-            self.turn(200) # vitesse de base : 150
-            time.sleep(0.5)
+            self.turn(210) # vitesse de base : 150
+            time.sleep(0.2)
             self.avance()
-        elif(self.th3.distance <= 20):
+        elif(self.th3.distance <= 35):
             self.stop_voiture()
             self.recule()
             if(self.speed<=40):
-                time.sleep(1.5)
+                time.sleep(0.8)
             else :
-                time.sleep(1)
+                time.sleep(0.5)
             self.stop_voiture()
             if(self.th1.distance<self.th2.distance):
                 self.turn(310)
-                time.sleep(0.5)
+                time.sleep(0.3)
                 self.avance()
                 time.sleep(1)
                 self.stop_voiture()
             if (self.th2.distance <self.th2.distance):
                 self.turn(200)
-                time.sleep(0.5)
+                time.sleep(0.3)
                 self.avance()
                 time.sleep(1)
                 self.stop_voiture()
@@ -182,7 +185,7 @@ class Voiture:
             self.avance()
         if (self.th2.distance >= 60):
             self.turn(283)
-            time.sleep(1)
+            time.sleep(0.3)
             self.start()
-            time.sleep(0.5)
+            time.sleep(0.3)
             self.avance()
