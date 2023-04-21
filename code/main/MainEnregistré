@@ -37,18 +37,3 @@ th2.stop()
 th3.stop()
 th4.stop()
 -------------------------------------------------------------
-from Thread import *
-from servo import *
-
-voit1 = Voiture(60)
-
-tour = int(input("Entre le nombre de tours:"))
-while (tour > 0):
-
-    print(voit1.detect_Line())
-    if voit1.detect_Line():
-        tour-=1
-
-print("Fin de course !")
-voit1.stopThread()
-voit1.stop_voiture()
