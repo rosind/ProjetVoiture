@@ -15,7 +15,7 @@ th3.start()
 th4.start()
 time.sleep(1)
 try:
-    while (tour > 0):
+    while (True):
         time.sleep(1)
         print(f"Le capteur Avant: {th3.distance} cm")
         print(f"Le capteur Droit: {th2.distance} cm")
