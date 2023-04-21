@@ -1,13 +1,15 @@
-import time
-
 from Thread import *
 from servo import *
-capt1 = CapteurInfrarouge(20)
-th4 = CapteurInfrarougeThread(capt1.pin)
-th4.start()
 
-for i in range(10):
-    print(th4.etat)
-    time.sleep(1)
+voit1 = Voiture(60)
 
-th4.stop()
+tour = int(input("Entre le nombre de tours:"))
+while (tour > 0):
+    
+    print(voit1.detect_Line())
+    if voit1.detect_Line():
+        tour-=1
+
+print("Fin de course !")
+voit1.stopThread()
+voit1.stop_voiture()
