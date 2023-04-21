@@ -9,7 +9,7 @@ courant = CaptCourant()
 try:
     tour = int(input("Entre le nombre de tours:"))
     while (tour > 0):
-        voit1.autonome()
+        voit1.testCapteurs()
         print(voit1.detect_Line())
         if voit1.detect_Line():
             tour-=1
