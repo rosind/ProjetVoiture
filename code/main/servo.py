@@ -136,15 +136,15 @@ class Voiture:
         self.start()
         time.sleep(0.3)
         self.avance()
-        if (self.th1.distance <= 15):
-            self.turn(310) # vitesse de base : 410 --> 310
+        if (self.th1.distance <= 30):
+            self.turn(290) # vitesse de base : 410 --> 310
             time.sleep(1)
             self.avance()
-        elif(self.th2.distance <= 15):
-            self.turn(210) # vitesse de base : 150 -->210
+        elif(self.th2.distance <= 30):
+            self.turn(225) # vitesse de base : 150 -->210
             time.sleep(1)
             self.avance()
-        elif(self.th3.distance <= 20):
+        elif(self.th3.distance <= 15):
             self.stop_voiture()
             self.recule()
             if(self.speed<=40):
@@ -156,7 +156,7 @@ class Voiture:
                 self.turn(310)
                 time.sleep(1)
                 self.avance()
-                time.sleep(1.2)
+                time.sleep(1)
                 self.stop_voiture()
             if (self.th2.distance < self.th1.distance):
                 self.turn(200)
@@ -198,4 +198,19 @@ class Voiture:
             time.sleep(0.3)
             self.start()
             time.sleep(0.3)
+            self.avance()
+
+    def evite(self):
+        self.start()
+        time.sleep(0.3)
+        self.avance()
+        if(self.th3.distance <= 20):
+            self.turn(310)
+            time.sleep(0.5)
+            self.avance()
+            time.sleep(1.2)
+            self.start()
+            time.sleep(0.5)
+            self.avance()
+        else : 
             self.avance()
