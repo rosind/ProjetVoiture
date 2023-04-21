@@ -33,3 +33,22 @@ th1.stop()
 th2.stop()
 th3.stop()
 th4.stop()
+
+try:
+    while (True):
+        time.sleep(1)
+        print(f"Le capteur Avant: {th3.distance} cm")
+        print(f"Le capteur Droit: {th2.distance} cm")
+        print(f"Le capteur Gauche: {th1.distance} cm")
+        print(f"Le capteur infrarouge est {th4.etat}")
+
+    th1.stop()
+    th2.stop()
+    th3.stop()
+    th4.stop()
+except(KeyboardInterrupt):
+    th1.stop()
+    th2.stop()
+    th3.stop()
+    th4.stop()
+
