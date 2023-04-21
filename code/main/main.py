@@ -3,11 +3,11 @@ from servo import *
 from captCourant import *
 
 voit1 = Voiture(60)
+voit1.startThread()
 courant = CaptCourant()
 
 tour = int(input("Entre le nombre de tours:"))
 while (tour > 0):
-    voit1.startThread()
     voit1.autonome()
     print(voit1.detect_Line())
     if voit1.detect_Line():
