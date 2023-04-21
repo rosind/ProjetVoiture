@@ -13,6 +13,7 @@ class CapteurUltrasonThread(threading.Thread):
         while self.running:
             liste_distance=deque(maxlen=10)
             liste_distance.append(self.capteur.distance)
+            print(liste_distance)
             #self.distance = sum(liste_distance)/len(liste_distance)
             #print(self.distance)
             time.sleep(0.1)
