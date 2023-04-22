@@ -1,14 +1,15 @@
-#!/usr/bin/env /python3reb
+#!/usr/bin/env python3
+
 import RPi.GPIO as GPIO
 import time
 import board
-import tcs34725
+import adafruit_tcs34725
 
 class Color:
     def __init__(self):
         super().init()
         self.i2c = board.I2C()
-        self.sensor = tcs34725.TCS34725(self.i2c)
+        self.sensor = adafruit_tcs34725.TCS34725(self.i2c)
         self.valColor = 0
         self.valTemp = 0
         self.valLux = 0
@@ -38,3 +39,4 @@ class Color:
 
     def getLux(self):
         return self.valLux
+    
