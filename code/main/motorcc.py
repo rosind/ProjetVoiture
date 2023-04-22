@@ -13,6 +13,9 @@ class drive:
         self.backward1 = not self.forward1
         self.setup()
 
+    def changeSpeed(self,speed):
+        self.speed = speed*40
+
     def setup(self, busnum=None):
         if busnum == None:
             self.pwm = p.PWM()                  # Initialize the servo controller.

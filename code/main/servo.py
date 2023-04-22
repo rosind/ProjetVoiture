@@ -48,7 +48,6 @@ class Voiture:
         #self.th4.passeligne = False
         #else:
         return self.th4.passeligne
-        time.sleep(1)
 
     def changeSpeed(self,speed):
         self.speed = speed
@@ -169,40 +168,28 @@ class Voiture:
     def IA(self):
         self.start()
         self.avance()
-        if self.th1.distance <=20:
-            self.turn(290)
-            self.avance()
-        elif self.th2.distance<=20:
-            self.turn(225)
-            self.avance()
-        elif self.th3.distance <= 30:
-            self.changeSpeed(self.speed/2)
-            if self.th3.distance >=30:
-                self.changeSpeed(self.speed*2)
-        #Faire reculer la voiture
-        elif(self.th3.distance <= 10):
-            self.stop_voiture()
-            self.recule()
-            if(self.speed<=40):
-                time.sleep(1)
-            else :
-                time.sleep(1)
-            self.stop_voiture()
-            if(self.th1.distance < self.th2.distance):
-                self.turn(310)
-                time.sleep(1)
-                self.avance()
-                time.sleep(1)
-                self.stop_voiture()
-            if (self.th2.distance < self.th1.distance):
-                self.turn(200)
-                time.sleep(1)
-                self.avance()
-                time.sleep(1)
-                self.stop_voiture()
-        else :
-            self.avance()
+        if self.th3.distance <= 30:
+            print("Distance plus petite que 30 cm")
+            print("1",self.speed)
+            self.voiture.changeSpeed(20)
+            print("2",self.speed)
+        else:
+            self.voiture.changeSpeed(40)
+            print("3",self.speed)
 
+
+
+        #Faire reculer la voiture
+
+    def distancePlusLoin(self):
+        dist_gauche = self.th1.distance
+        dist_droite = self.th2.distance
+        dist_plus_loin = None
+        if dist_droite < dist_gauche:
+            dist_plus_loin = False      #False --> Distance Gauche
+        if dist_gauche < dist_droite:
+            dist_plus_loin = True       #True --> Distance Droite
+        return dist_plus_loin
 
     def mur_gauche(self):
         self.start()
