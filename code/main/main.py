@@ -13,7 +13,7 @@ try:
         print(voit1.detect_Line())
         if voit1.detect_Line():
             tour-=1
-            time.sleep(1.5)
+            time.sleep(0)
 
     print("Fin de course !")
     voit1.stopThread()

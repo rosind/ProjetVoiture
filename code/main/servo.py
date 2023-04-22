@@ -136,15 +136,15 @@ class Voiture:
         self.start()
         time.sleep(0.3)
         self.avance()
-        while (self.th1.distance <= 30):
+        if (self.th1.distance <= 30):
             self.turn(290) # vitesse de base : 410 --> 310
-            #time.sleep(1)
-        self.avance()
-        while (self.th2.distance <= 30):
+            time.sleep(1)
+            self.avance()
+        elif(self.th2.distance <= 30):
             self.turn(225) # vitesse de base : 150 -->210
-            #time.sleep(1)
-        self.avance()
-        if(self.th3.distance <= 15):
+            time.sleep(1)
+            self.avance()
+        elif(self.th3.distance <= 15):
             self.stop_voiture()
             self.recule()
             if(self.speed<=40):
@@ -166,6 +166,44 @@ class Voiture:
                 self.stop_voiture()
         else :
             self.avance()
+    def IA(self):
+        self.start()
+        self.avance()
+        if self.th1.distance <=20:
+            self.turn(290)
+            self.avance()
+        elif self.th2.distance<=20:
+            self.turn(225)
+            self.avance()
+        elif self.th3.distance <= 30:
+            self.changeSpeed(self.speed/2)
+            if self.th3.distance >=30:
+                self.changeSpeed(self.speed*2)
+        #Faire reculer la voiture
+        elif(self.th3.distance <= 10):
+            self.stop_voiture()
+            self.recule()
+            if(self.speed<=40):
+                time.sleep(1)
+            else :
+                time.sleep(1)
+            self.stop_voiture()
+            if(self.th1.distance < self.th2.distance):
+                self.turn(310)
+                time.sleep(1)
+                self.avance()
+                time.sleep(1)
+                self.stop_voiture()
+            if (self.th2.distance < self.th1.distance):
+                self.turn(200)
+                time.sleep(1)
+                self.avance()
+                time.sleep(1)
+                self.stop_voiture()
+        else :
+            self.avance()
+
+
     def mur_gauche(self):
         self.start()
         time.sleep(0.5)
@@ -213,7 +251,7 @@ class Voiture:
             self.start()
             time.sleep(0.5)
             self.avance()
-        else : 
+        else :
             self.avance()
 
     def testCapteurs(self):
