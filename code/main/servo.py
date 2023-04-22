@@ -197,11 +197,6 @@ class Voiture:
             self.turn(325)
 
 
-
-
-
-        #Faire reculer la voiture
-
     def distancePlusLoin(self):
         dist_gauche = self.th1.distance
         dist_droite = self.th2.distance
