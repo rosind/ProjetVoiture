@@ -1,7 +1,7 @@
 import time
 
 from Thread import *
-from servo import *
+from voiture import *
 from captCourant import *
 
 voit1 = Voiture(40)
