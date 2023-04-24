@@ -1,3 +1,5 @@
+import time
+
 from Thread import *
 from servo import *
 from captCourant import *
@@ -9,11 +11,12 @@ courant = CaptCourant()
 try:
     tour = int(input("Entre le nombre de tours:"))
     while (tour > 0):
-        voit1.testCapteurs()
+        voit1.IA()
+        time.sleep(0.1)
         print(voit1.detect_Line())
         if voit1.detect_Line():
             tour-=1
-            time.sleep(1.5)
+            time.sleep(0)
 
     print("Fin de course !")
     voit1.stopThread()

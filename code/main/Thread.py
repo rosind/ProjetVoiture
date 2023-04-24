@@ -14,7 +14,7 @@ class CapteurUltrasonThread(threading.Thread):
             liste_distance=deque(maxlen=20)
             liste_distance.append(self.capteur.distance())
             self.distance = sum(liste_distance)/len(liste_distance)
-            time.sleep(1)
+            time.sleep(0.0001)
             #self.distance=self.capteur.distance()
             #print(self.distance)
 
@@ -33,6 +33,7 @@ class CapteurInfrarougeThread(threading.Thread):
 
     def run(self):
         while (self.running):
+            time.sleep(1)
             self.passeligne = self.capteur.detect()
             if self.capteur.detect():
                 #print("detect ok")

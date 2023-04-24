@@ -48,7 +48,6 @@ class Voiture:
         #self.th4.passeligne = False
         #else:
         return self.th4.passeligne
-        time.sleep(1)
 
     def changeSpeed(self,speed):
         self.speed = speed
@@ -136,15 +135,15 @@ class Voiture:
         self.start()
         time.sleep(0.3)
         self.avance()
-        while (self.th1.distance <= 30):
+        if (self.th1.distance <= 30):
             self.turn(290) # vitesse de base : 410 --> 310
-            #time.sleep(1)
-        self.avance()
-        while (self.th2.distance <= 30):
+            time.sleep(1)
+            self.avance()
+        elif(self.th2.distance <= 30):
             self.turn(225) # vitesse de base : 150 -->210
-            #time.sleep(1)
-        self.avance()
-        if(self.th3.distance <= 15):
+            time.sleep(1)
+            self.avance()
+        elif(self.th3.distance <= 15):
             self.stop_voiture()
             self.recule()
             if(self.speed<=40):
@@ -166,6 +165,48 @@ class Voiture:
                 self.stop_voiture()
         else :
             self.avance()
+    def IA(self):
+        self.start()
+        self.avance()
+        if self.th3.distance <= 30:
+            self.avance()
+            print("Distance plus petite que 30 cm")
+            print("1",self.speed)
+            self.voiture.changeSpeed(30)
+            print("2",self.speed)
+            if self.th1.distance >=100 and self.th2.distance>=100:
+                self.turn(140)
+        if self.th3.distance <=7:
+            print("Distance plus petite que 10 cm")
+            self.voiture.changeSpeed(60)
+            self.recule()
+            time.sleep(0.7)
+            if self.th1.distance >=80 and self.th2.distance>=30:
+                self.turn(140)
+            if self.distancePlusLoin() == False:
+                self.turn(140)
+            if self.distancePlusLoin() == True:
+                self.turn(360)
+
+        else:
+            self.voiture.changeSpeed(30)
+            print("3",self.speed)
+        if self.distancePlusLoin()==False:
+            self.turn(190)
+        if self.distancePlusLoin() == True:
+            self.turn(325)
+
+
+    def distancePlusLoin(self):
+        dist_gauche = self.th1.distance
+        dist_droite = self.th2.distance
+        dist_plus_loin = None
+        if dist_droite < dist_gauche:
+            dist_plus_loin = False      #False --> Distance Gauche
+        if dist_gauche < dist_droite:
+            dist_plus_loin = True       #True --> Distance Droite
+        return dist_plus_loin
+
     def mur_gauche(self):
         self.start()
         time.sleep(0.5)
@@ -205,15 +246,17 @@ class Voiture:
         self.start()
         time.sleep(0.3)
         self.avance()
-        if(self.th3.distance <= 20):
+        if(self.th3.distance <= 30):
             self.turn(310)
             time.sleep(0.5)
             self.avance()
-            time.sleep(1.2)
+            time.sleep(1)
+            self.turn(170)
+            time.sleep(1)
             self.start()
             time.sleep(0.5)
             self.avance()
-        else : 
+        else :
             self.avance()
 
     def testCapteurs(self):
